@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MvcStudy.Models.Demo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm("Index", "Demoes", FormMethod.Get)) { 
+        <p>
+            DemoColor:@Html.DropDownList("demoColor", "All")
+            DemoName: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DemoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DemoOther)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DemoPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DemoColor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DemoDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemoName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemoOther)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemoPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemoColor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemoDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DemoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DemoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DemoId })
+        </td>
+    </tr>
+}
+
+</table>

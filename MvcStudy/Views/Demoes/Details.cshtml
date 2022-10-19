@@ -1,0 +1,58 @@
+﻿@model MvcStudy.Models.Demo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Demo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DemoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemoOther)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemoOther)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemoPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemoPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemoColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemoColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemoDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemoDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DemoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
