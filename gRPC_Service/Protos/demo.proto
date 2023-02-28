@@ -1,0 +1,38 @@
+﻿syntax = "proto3";
+
+service Demo{
+	// type of method
+	// Unary
+	rpc Unary (DemoRequest) returns (DemoResponse);
+
+	// Server Streaming
+	rpc ServerStreaming (DemoRequest) returns (stream DemoResponse);
+
+	// Client Streaming
+	rpc ClientStreaming (stream DemoRequest) returns (DemoResponse);
+
+	// Bi-directional Streaming
+	rpc BothWaysStreaming (stream DemoRequest) returns (stream DemoResponse);
+
+	
+	// mulit-threading with gRPC Streaming methods
+	rpc Download (DataRequest) returns (stream DataResponse);
+}
+
+message DemoRequest{
+	string header = 1;
+	string body = 2;
+	bool isOk = 3;
+}
+
+message DemoResponse{
+	string reponseMessage = 1;
+}
+
+message DataRequest{
+	string value = 1;
+}
+
+message DataResponse{
+	int32 bytesProcessed = 1;
+}
