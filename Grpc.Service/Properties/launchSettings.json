@@ -1,0 +1,14 @@
+﻿{
+  "profiles": {
+    "Grpc.Service": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      // 给客户端请求提供监听的地址
+      "applicationUrl": "http://localhost:5283;https://localhost:7177",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

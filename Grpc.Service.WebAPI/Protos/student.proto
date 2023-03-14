@@ -1,0 +1,29 @@
+// proto 版本
+syntax = "proto3";
+
+// 命名空间
+option csharp_namespace = "Grpc.Service.Protos";
+
+// 包名
+package student;
+
+// 服务名称
+service Student{
+	// 方法名称
+	rpc GetStudent (StudentRequest) returns (StudentResponse);
+}
+
+// 请求的参数对象
+message StudentRequest{
+	string Id = 1;
+	string Name = 2;
+}
+
+// 相应的参数对象
+message StudentResponse{
+	string Id = 1;
+	string Name = 2;
+	int32 Age = 3;
+	string Gender = 4;
+	string class = 5;
+}
